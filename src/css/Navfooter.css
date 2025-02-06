@@ -1,0 +1,12 @@
+.brand_logo {
+  width: 80px;
+  aspect-ratio: 1;
+}
+nav {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.fix_maxWidth {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
