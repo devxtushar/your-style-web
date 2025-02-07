@@ -19,6 +19,51 @@
   aspect-ratio: 1;
   border-radius: 1.5em;
 }
+.category_card {
+  border-radius: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.category_card:hover {
+  transform: scale(1.05);
+}
+.inside_img {
+  position: absolute;
+  left: 2.5em;
+  bottom: 3.5em;
+}
+.limited_edition {
+  background-attachment: fixed;
+  background-image: url("https://your-style.vercel.app/static/media/banner-03.f1347d60f977c5d1eb9d.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 4;
+  border-radius: 1.5em;
+}
+.product_card {
+  margin-bottom: 2em;
+  padding: 1em;
+  border-radius: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 0.3s ease-in;
+}
+.product_card:hover {
+  transform: scale(1.05);
+}
+.product_img {
+  border-radius: 1.5em;
+  width: 100%;
+  max-width: 300px;
+  min-width: 250px;
+  aspect-ratio: 0.8;
+}
+
 @media screen and (max-width: 1175px) {
   .category_div {
     flex-wrap: wrap;
