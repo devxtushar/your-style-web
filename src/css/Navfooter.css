@@ -3,10 +3,19 @@
   aspect-ratio: 1;
 }
 nav {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(35, 106, 142, 0.5);
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
 }
 .fix_maxWidth {
   width: 100%;
   max-width: 500px;
-  position: relative;
+}
+@media screen and (max-width: 475px) {
+  .brand_logo {
+    display: none;
+  }
 }

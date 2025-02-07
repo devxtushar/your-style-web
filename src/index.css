@@ -3,7 +3,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 500;
-  background-color: #fff;
+  background-color: #f5f7f9;
+  color: #fff;
 }
 * {
   margin: 0px;
@@ -15,12 +16,8 @@ html {
   font-size: 10px;
 }
 
-body {
-  /* padding: 1em 15em; */
-}
-
 h1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 h2 {
   font-size: 1.8em;
@@ -38,7 +35,7 @@ h6 {
   font-size: 1em;
 }
 .t1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 .t2 {
   font-size: 1.8em;
@@ -63,8 +60,8 @@ hr {
 
 button {
   padding: 0.5em 2em;
-  background-color: #fff;
-  color: black;
+  background-color: black;
+  color: white;
   border-radius: 8px;
   font-size: 1.4em;
   font-weight: 500;
@@ -85,18 +82,25 @@ input {
   font-size: 1.6em;
   font-family: monospace;
 }
+.global_container {
+  padding: 0em 15em;
+}
+.top_container {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
 
-@media screen and (min-width: 0px) and (max-width: 550px) {
+@media screen and (min-width: 0px) and (max-width: 690px) {
   html {
     font-size: 8px;
   }
-  /* body {
-    padding: 1em 2em;
-  } */
+  .global_container {
+    padding: 0em 2em;
+  }
 }
 
-@media screen and (min-width: 551px) and (max-width: 890px) {
-  /* body {
-    padding: 1em 8em;
-  } */
+@media screen and (min-width: 690px) and (max-width: 890px) {
+  .global_container {
+    padding: 0em 8em;
+  }
 }
