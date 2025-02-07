@@ -1,5 +1,6 @@
 import CategoryCard from "../components/CategoryCard";
 import CustomHeader from "../components/CustomHeader";
+import ProductCard from "../components/ProductCard";
 import "../css/Home.css";
 
 function Home() {
@@ -23,11 +24,28 @@ function Home() {
           title="Categories"
           subtitle="Top featured categories of all products"
         />
-        <div className="top_container category_div flex flex-row gap-10 justify-between">
+        <div className="top_container category_div flex flex-row gap-10 justify-evenly">
           <CategoryCard />
           <CategoryCard />
           <CategoryCard />
           <CategoryCard />
+        </div>
+
+        <div className="limited_edition"></div>
+      </div>
+      <div className="featured global_container top_container">
+        <CustomHeader
+          title="Featured Products"
+          subtitle="Top Featured products with maximum discount"
+        />
+        <div className="flex flex-row flex-wrap gap-5 justify-evenly top_container">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
       </div>
     </main>
