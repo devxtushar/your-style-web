@@ -14,7 +14,7 @@ function Nav() {
       <div className="flex-1">
         <Link to="/">
           <img
-            src="/images/brandLogo.webp"
+            src="/images/brandLogo.png"
             alt="brandLogo"
             className="brand_logo"
           />
