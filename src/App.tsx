@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Layout from "./components/Layout";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products-detail/:id" element={<ProductDetail />} />
+          <Route path="product/:id" element={<Products />} />
+          <Route path="product-detail/:id" element={<ProductDetail />} />
+          <Route path="wishlist" element={<Wishlist />} />
         </Route>
       </Routes>
     </BrowserRouter>

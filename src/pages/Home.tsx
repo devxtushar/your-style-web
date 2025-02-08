@@ -2,6 +2,7 @@ import CategoryCard from "../components/CategoryCard";
 import CustomHeader from "../components/CustomHeader";
 import ProductCard from "../components/ProductCard";
 import "../css/Home.css";
+import { productJSON } from "../utils/JSON";
 
 function Home() {
   return (
@@ -39,13 +40,13 @@ function Home() {
           subtitle="Top Featured products with maximum discount"
         />
         <div className="flex flex-row flex-wrap gap-5 justify-evenly top_container">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {productJSON.map((items, i) => {
+            return (
+              <div key={i}>
+                <ProductCard items={items} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </main>

@@ -1,21 +1,30 @@
 .brand_logo {
-  width: 80px;
-  aspect-ratio: 1;
+  width: 100px;
+  aspect-ratio: 1.4;
 }
-nav {
-  background-color: rgba(35, 106, 142, 0.5);
-  position: absolute;
-  z-index: 999;
+.nav_visible {
+  background-color: #fff;
   width: 100%;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
 }
+.nav_transparent {
+  background-color: rgba(35, 106, 142, 0.5);
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  color: #fff;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+
 .fix_maxWidth {
   width: 100%;
   max-width: 500px;
 }
 footer {
-  background-color: #0c1821;
+  background-color: var(--basecolor);
+  color: #fff;
 }
 @media screen and (max-width: 475px) {
   .brand_logo {

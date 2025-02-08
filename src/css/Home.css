@@ -7,6 +7,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  color: #fff;
 }
 .offer_text {
   font-size: 6.6em;
@@ -14,12 +15,16 @@
 }
 .category_card__img {
   width: 100%;
-  max-width: 400px;
-  min-width: 200px;
   aspect-ratio: 1;
   border-radius: 1.5em;
 }
+.categories {
+  color: #fff;
+}
 .category_card {
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
   border-radius: 1.5em;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -41,11 +46,16 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  aspect-ratio: 4;
+  aspect-ratio: 3;
   border-radius: 1.5em;
+  margin-top: 6em;
 }
 .product_card {
+  width: 100%;
+  max-width: 300px;
+  min-width: 250px;
   margin-bottom: 2em;
+  color: black;
   padding: 1em;
   border-radius: 1.5em;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -59,27 +69,36 @@
 .product_img {
   border-radius: 1.5em;
   width: 100%;
-  max-width: 300px;
-  min-width: 250px;
   aspect-ratio: 0.8;
+}
+.wishlist_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wishlist_btn:hover {
+  background-color: var(--basecolor);
 }
 
 @media screen and (max-width: 1175px) {
   .category_div {
     flex-wrap: wrap;
   }
-  .category_card__img {
+  .category_card {
     max-width: 300px;
   }
 }
 
 @media screen and (min-width: 512px) and (max-width: 925px) {
-  .category_card__img {
+  .category_card {
     max-width: 230px;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 512px) {
-  .category_card__img {
+  .category_card {
     max-width: 100%;
   }
 }
