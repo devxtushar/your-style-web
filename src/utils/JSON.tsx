@@ -93,7 +93,7 @@ export const productJSON = [
     platformName: "meesho",
     productBuyUrl: "https://www.meesho.com/women-trendy-dress/p/56ubue",
     title: "INSTAQUEEN",
-    description: "WOMEN TRENDY DRESS",
+    description: "Women Trendy Dress",
     imageGallery: [
       {
         url: "https://images.meesho.com/images/products/313823606/iis47_512.webp",
