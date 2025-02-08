@@ -5,6 +5,7 @@
   font-weight: 500;
   background-color: #f5f7f9;
   color: #fff;
+  --basecolor: #0c1821;
 }
 * {
   margin: 0px;
