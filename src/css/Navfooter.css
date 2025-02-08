@@ -4,7 +4,6 @@
 }
 .nav_visible {
   background-color: #fff;
-  color: black;
   width: 100%;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
@@ -14,6 +13,7 @@
   position: absolute;
   z-index: 999;
   width: 100%;
+  color: #fff;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
 }
@@ -24,6 +24,7 @@
 }
 footer {
   background-color: var(--basecolor);
+  color: #fff;
 }
 @media screen and (max-width: 475px) {
   .brand_logo {

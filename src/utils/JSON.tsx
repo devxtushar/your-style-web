@@ -130,3 +130,43 @@ export const productJSON = [
     percentageOff: 75,
   },
 ];
+
+export const filterJSON = [
+  {
+    heading: "Platforms",
+    options: [
+      {
+        name: "Amazon",
+      },
+      {
+        name: "Flipkart",
+      },
+      {
+        name: "Meesho",
+      },
+      {
+        name: "Myntra",
+      },
+    ],
+  },
+  {
+    heading: "Discounts",
+    options: [
+      {
+        name: "30",
+      },
+      {
+        name: "40",
+      },
+      {
+        name: "50",
+      },
+      {
+        name: "60",
+      },
+      {
+        name: "70",
+      },
+    ],
+  },
+];

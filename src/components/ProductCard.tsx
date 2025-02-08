@@ -31,8 +31,8 @@ function ProductCard(props: any) {
             )}
           </span>
         </div>
-        <div>
-          <button>Add to wishlist</button>
+        <div style={{ marginTop: 15 }}>
+          <button className="wishlist_btn">Add to wishlist</button>
         </div>
       </div>
     </div>
