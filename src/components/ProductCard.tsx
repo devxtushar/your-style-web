@@ -21,9 +21,9 @@ function ProductCard(props: any) {
         </div>
         <div>
           <span className="t4 capitalize">
-            {description && description.length > 38 ? (
+            {description && description.length > 30 ? (
               <>
-                {description.slice(0, 38)}
+                {description.slice(0, 30)}
                 {"..."}
               </>
             ) : (

@@ -33,32 +33,16 @@ function Products() {
       <section className="products">
         <div className="flex flex-row flex-wrap gap-5 justify-evenly">
           {productJSON.map((items, i) => {
-            return (
-              <div key={i}>
-                <ProductCard items={items} />
-              </div>
-            );
+            return <ProductCard items={items} key={i} />;
           })}
           {productJSON.map((items, i) => {
-            return (
-              <div key={i}>
-                <ProductCard items={items} />
-              </div>
-            );
+            return <ProductCard items={items} key={i} />;
           })}
           {productJSON.map((items, i) => {
-            return (
-              <div key={i}>
-                <ProductCard items={items} />
-              </div>
-            );
+            return <ProductCard items={items} key={i} />;
           })}
           {productJSON.map((items, i) => {
-            return (
-              <div key={i}>
-                <ProductCard items={items} />
-              </div>
-            );
+            return <ProductCard items={items} key={i} />;
           })}
         </div>
       </section>
