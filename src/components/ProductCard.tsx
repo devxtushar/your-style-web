@@ -1,5 +1,13 @@
 function ProductCard(props: any) {
-  const { title, platformName, description, imageGallery } = props.items;
+  const {
+    title,
+    platformName,
+    description,
+    imageGallery,
+    mrp,
+    salePrice,
+    percentageOff,
+  } = props.items;
   return (
     <div className="product_card">
       <div>
@@ -21,15 +29,24 @@ function ProductCard(props: any) {
         </div>
         <div>
           <span className="t4 capitalize">
-            {description && description.length > 38 ? (
+            {description && description.length > 30 ? (
               <>
-                {description.slice(0, 38)}
+                {description.slice(0, 30)}
                 {"..."}
               </>
             ) : (
               description
             )}
           </span>
+        </div>
+        <div className="flex flex-row gap-5 items-center">
+          <span className="t3">₹{salePrice}</span>
+          {mrp != salePrice && (
+            <span className="t3 text-gray-400 line-through">₹{mrp}</span>
+          )}
+          {percentageOff != 0 && (
+            <span className="t4 text-green-500">{percentageOff}% off</span>
+          )}
         </div>
         <div style={{ marginTop: 15 }}>
           <button className="wishlist_btn">Add to wishlist</button>

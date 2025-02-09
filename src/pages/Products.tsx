@@ -1,5 +1,6 @@
 import "../css/Product.css";
 import { filterJSON, productJSON } from "../utils/JSON";
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 function Products() {
   return (
@@ -34,30 +35,30 @@ function Products() {
         <div className="flex flex-row flex-wrap gap-5 justify-evenly">
           {productJSON.map((items, i) => {
             return (
-              <div key={i}>
+              <Link to="/product-detail/1" key={i}>
                 <ProductCard items={items} />
-              </div>
+              </Link>
             );
           })}
           {productJSON.map((items, i) => {
             return (
-              <div key={i}>
+              <Link to="/product-detail/1" key={i}>
                 <ProductCard items={items} />
-              </div>
+              </Link>
             );
           })}
           {productJSON.map((items, i) => {
             return (
-              <div key={i}>
+              <Link to="/product-detail/1" key={i}>
                 <ProductCard items={items} />
-              </div>
+              </Link>
             );
           })}
           {productJSON.map((items, i) => {
             return (
-              <div key={i}>
+              <Link to="/product-detail/1" key={i}>
                 <ProductCard items={items} />
-              </div>
+              </Link>
             );
           })}
         </div>

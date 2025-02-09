@@ -3,9 +3,10 @@
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 2em;
   width: 100%;
-  max-width: 300px;
-  min-width: 250px;
+  max-width: 250px;
+  min-width: 200px;
   height: 75em;
+  background-color: #fff;
 }
 .checkbox {
   width: 100%;
@@ -17,4 +18,77 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 2em;
+  background-color: #fff;
+}
+.product_card {
+  background-color: #fff;
+
+  width: 100%;
+  max-width: 250px;
+  min-width: 200px;
+  margin-bottom: 2em;
+  color: black;
+  padding: 1em;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  transition: 0.3s ease-in;
+}
+.product_card:hover {
+  transform: scale(1.05);
+}
+.product_img {
+  width: 100%;
+  aspect-ratio: 0.8;
+}
+.images_section {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 2em;
+  background-color: #fff;
+  width: 100%;
+  max-width: 450px;
+  min-width: 250px;
+}
+.product_detail__section {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 2em;
+  background-color: #fff;
+  width: 100%;
+  min-width: 250px;
+}
+.product_images {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.btn_container {
+  display: flex;
+  gap: 0px;
+  margin-top: 2em;
+}
+
+.splash_btn {
+  width: 100%;
+  max-width: 200px;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.5em;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.compare_now {
+  background-color: var(--basecolor);
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.buy_now {
+  background-color: green;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  margin-left: -20px;
 }
