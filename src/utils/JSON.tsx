@@ -105,7 +105,7 @@ export const productJSON = [
       },
     ],
     mrp: 395,
-    salePrice: 0,
+    salePrice: 395,
     percentageOff: 0,
   },
   {
