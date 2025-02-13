@@ -40,6 +40,12 @@
   width: 100%;
   aspect-ratio: 0.8;
 }
+.images {
+  background-color: #fff;
+  width: 100%;
+  min-width: 250px;
+  aspect-ratio: 0.75;
+}
 .images_section {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -64,13 +70,14 @@
 
 .btn_container {
   display: flex;
+
   gap: 0px;
   margin-top: 2em;
 }
 
 .splash_btn {
   width: 100%;
-  max-width: 200px;
+  max-width: 220px;
   color: #fff;
   font-size: 1.8em;
   font-weight: 700;
@@ -90,5 +97,5 @@
 .buy_now {
   background-color: green;
   clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-  margin-left: -20px;
+  margin-left: -22px;
 }
