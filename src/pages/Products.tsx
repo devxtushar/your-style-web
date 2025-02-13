@@ -1,8 +1,18 @@
 import "../css/Product.css";
-import { filterJSON, productJSON } from "../utils/JSON";
-import { Link } from "react-router-dom";
+import { filterJSON } from "../utils/JSON";
+import { Link, useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { getAPI } from "../services/apiCalls";
 function Products() {
+  const params = useParams();
+  const { data } = useQuery({
+    queryKey: ["products", params.type],
+    queryFn: () => getAPI(`/products?categoryType=${params.type}`),
+    placeholderData: keepPreviousData,
+  });
+  console.log(data, "data kya hai ");
+  if (!data) return null;
   return (
     <div className="global_container top_container flex flex-row gap-10">
       <section className="filters flex flex-col gap-10">
@@ -20,7 +30,6 @@ function Products() {
                     >
                       <input type="checkbox" className="checkbox" />
                       <label>
-                        {" "}
                         {items.name} {heading === "Discounts" && "% or more"}
                       </label>
                     </li>
@@ -31,36 +40,24 @@ function Products() {
           );
         })}
       </section>
-      <section className="products">
+      <section className="flex-1 products">
         <div className="flex flex-row flex-wrap gap-5 justify-evenly">
-          {productJSON.map((items, i) => {
-            return (
-              <Link to="/product-detail/1" key={i}>
-                <ProductCard items={items} />
-              </Link>
-            );
-          })}
-          {productJSON.map((items, i) => {
-            return (
-              <Link to="/product-detail/1" key={i}>
-                <ProductCard items={items} />
-              </Link>
-            );
-          })}
-          {productJSON.map((items, i) => {
-            return (
-              <Link to="/product-detail/1" key={i}>
-                <ProductCard items={items} />
-              </Link>
-            );
-          })}
-          {productJSON.map((items, i) => {
-            return (
-              <Link to="/product-detail/1" key={i}>
-                <ProductCard items={items} />
-              </Link>
-            );
-          })}
+          {data.data.length > 0 ? (
+            data.data.map((items: any, i: number) => {
+              return (
+                <Link to={`/product-detail/${items._id}`} key={i}>
+                  <ProductCard items={items} />
+                </Link>
+              );
+            })
+          ) : (
+            <div
+              className="flex flex-row justify-center items-center"
+              style={{ height: "70vh" }}
+            >
+              <h1>Products are not available in this category!</h1>
+            </div>
+          )}
         </div>
       </section>
     </div>
