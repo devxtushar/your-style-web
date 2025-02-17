@@ -1,0 +1,42 @@
+.compare_modal {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  padding: 3em 8em;
+}
+.compare_img__section {
+  position: relative;
+  padding: 1em;
+  background-color: #f5f7f9;
+  width: 200px;
+}
+.compare_img {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 1em;
+}
+.compare_img__section:hover .compare_img {
+  opacity: 0.2;
+}
+.compare_img__section:hover .remove_product {
+  display: block;
+}
+.remove_product {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  cursor: pointer;
+}
+.compare_card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #fff;
+}
+.compare_key__pair {
+  border-bottom: 1px solid rgb(223, 223, 223);
+  border-left: 1px solid rgb(223, 223, 223);
+  border-right: 1px solid rgb(223, 223, 223);
+  padding: 2em;
+}

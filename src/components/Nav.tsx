@@ -39,8 +39,8 @@ function Nav() {
           </Link>
         </div>
         <div className="flex-1 flex flex-row justify-end">
-          <Link to="/wishlist">
-            <button>Wishlist</button>
+          <Link to="/compare">
+            <button className="uppercase">Compare</button>
           </Link>
         </div>
       </div>

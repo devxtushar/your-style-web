@@ -73,7 +73,6 @@ function ProductDetail() {
                 <span className="t3 capitalize text-gray-400">
                   {platformName}
                 </span>
-                <button className="capitalize">add to wishlist</button>
               </div>
               <div>
                 <span className="t2 uppercase text-gray-500">{title}</span>
@@ -157,6 +156,7 @@ function ProductDetail() {
                       );
                     }
                   )}
+                <hr />
               </div>
             )}
           </section>
