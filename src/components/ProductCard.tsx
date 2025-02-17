@@ -48,8 +48,9 @@ function ProductCard(props: any) {
             <span className="t4 text-green-500">{percentageOff}% off</span>
           )}
         </div>
-        <div style={{ marginTop: 15 }}>
-          <button className="wishlist_btn">Add to wishlist</button>
+        <div className="btn_container" style={{ marginTop: 15 }}>
+          <span className="splash_btn compare_now">Compare</span>
+          <span className="splash_btn buy_now">Buy</span>
         </div>
       </div>
     </div>

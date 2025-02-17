@@ -17,9 +17,8 @@ nav {
 }
 .nav_transparent {
   background-color: rgba(35, 106, 142, 0.5);
-  position: absolute;
-  z-index: 999;
-  width: 100%;
+  /* position: absolute; */
+  width: 1440px;
   color: #fff;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
