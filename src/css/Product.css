@@ -22,7 +22,6 @@
 }
 .product_card {
   background-color: #fff;
-
   width: 100%;
   max-width: 250px;
   min-width: 200px;
@@ -62,6 +61,8 @@
   background-color: #fff;
   width: 100%;
   min-width: 250px;
+  height: 65.5em;
+  overflow: auto;
 }
 .product_images {
   width: 100%;
@@ -70,7 +71,6 @@
 
 .btn_container {
   display: flex;
-
   gap: 0px;
   margin-top: 2em;
 }
@@ -98,4 +98,21 @@
   background-color: green;
   clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
   margin-left: -22px;
+}
+
+.key_pair {
+  width: 45%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+.product_description__Image {
+  width: 100%;
+  max-width: 200px;
+  min-width: 200px;
+  aspect-ratio: 0.8;
+  border-radius: 4px;
+}
+
+.product_detail__section::-webkit-scrollbar {
+  display: none;
 }

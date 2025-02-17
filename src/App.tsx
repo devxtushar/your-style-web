@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Layout from "./components/Layout";
-import Wishlist from "./pages/Wishlist";
+import Compare from "./pages/Compare";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="product/:type" element={<Products />} />
             <Route path="product-detail/:id" element={<ProductDetail />} />
-            <Route path="wishlist" element={<Wishlist />} />
+            <Route path="compare" element={<Compare />} />
           </Route>
         </Routes>
       </BrowserRouter>
