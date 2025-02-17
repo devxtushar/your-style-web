@@ -26,7 +26,7 @@ function Home() {
             title="Categories"
             subtitle="Top featured categories of all products"
           />
-          <div className="top_container category_div flex flex-row gap-10 justify-evenly">
+          <div className="top_container category_div flex flex-row gap-10 justify-between">
             <CategoryCard />
             <CategoryCard />
             <CategoryCard />

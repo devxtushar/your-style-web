@@ -10,15 +10,16 @@ nav {
 .nav_visible {
   background-color: #fff;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
   margin: 0 auto;
 }
 .nav_transparent {
   background-color: rgba(35, 106, 142, 0.5);
-  /* position: absolute; */
-  width: 1440px;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
   color: #fff;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
@@ -35,7 +36,7 @@ footer {
 }
 .footer_width {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 @media screen and (max-width: 475px) {
