@@ -1,4 +1,9 @@
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { addToCompareModal } from "../store/slices/compareSlice";
+
 function ProductCard(props: any) {
+  const dispatch = useDispatch();
   const {
     title,
     platformName,
@@ -7,16 +12,21 @@ function ProductCard(props: any) {
     mrp,
     salePrice,
     percentageOff,
+    productBuyUrl,
+    _id,
   } = props.items;
+
   return (
     <div className="product_card">
-      <div>
-        <img
-          src={imageGallery[0].url}
-          alt="women black top"
-          className="product_img"
-        />
-      </div>
+      <Link to={`/product-detail/${_id}`}>
+        <div>
+          <img
+            src={imageGallery[0].url}
+            alt="women black top"
+            className="product_img"
+          />
+        </div>
+      </Link>
       <div
         className="flex flex-col gap-2"
         style={{ marginTop: 10, marginBottom: 15 }}
@@ -48,8 +58,21 @@ function ProductCard(props: any) {
             <span className="t4 text-green-500">{percentageOff}% off</span>
           )}
         </div>
-        <div style={{ marginTop: 15 }}>
-          <button className="wishlist_btn">Add to wishlist</button>
+        <div className="btn_container" style={{ marginTop: 15 }}>
+          <span
+            className="splash_btn compare_now"
+            onClick={() => dispatch(addToCompareModal(_id))}
+          >
+            Compare
+          </span>
+          <a
+            href={productBuyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="splash_btn buy_now"
+          >
+            <span>Buy</span>
+          </a>
         </div>
       </div>
     </div>

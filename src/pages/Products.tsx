@@ -1,6 +1,6 @@
 import "../css/Product.css";
 import { filterJSON } from "../utils/JSON";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getAPI } from "../services/apiCalls";
@@ -11,7 +11,6 @@ function Products() {
     queryFn: () => getAPI(`/products?categoryType=${params.type}`),
     placeholderData: keepPreviousData,
   });
-  console.log(data, "data kya hai ");
   if (!data) return null;
   return (
     <main>
@@ -45,11 +44,7 @@ function Products() {
           <div className="flex flex-row flex-wrap gap-5 justify-evenly">
             {data.data.length > 0 ? (
               data.data.map((items: any, i: number) => {
-                return (
-                  <Link to={`/product-detail/${items._id}`} key={i}>
-                    <ProductCard items={items} />
-                  </Link>
-                );
+                return <ProductCard items={items} key={i} />;
               })
             ) : (
               <div

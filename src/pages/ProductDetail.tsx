@@ -4,9 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { getAPI } from "../services/apiCalls";
 import Slider from "react-slick";
 import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { addToCompareModal } from "../store/slices/compareSlice";
 
 function ProductDetail() {
   const params = useParams();
+  const dispatch = useDispatch();
   const { data } = useQuery({
     queryKey: ["products"],
     queryFn: () => getAPI(`/products?_id=${params.id}`),
@@ -26,6 +29,7 @@ function ProductDetail() {
     title,
     imageGallery,
     platformName,
+    productBuyUrl,
     description,
     mrp,
     salePrice,
@@ -33,6 +37,7 @@ function ProductDetail() {
     productDetail,
     productDescription,
     rate,
+    _id,
   } = data?.data[0];
 
   var settings = {
@@ -60,8 +65,20 @@ function ProductDetail() {
               )}
             </Slider>
             <div className="btn_container">
-              <span className="splash_btn compare_now">Compare Now</span>
-              <span className="splash_btn buy_now">Buy Now</span>
+              <span
+                className="splash_btn compare_now"
+                onClick={() => dispatch(addToCompareModal(_id))}
+              >
+                Compare Now
+              </span>
+              <a
+                href={productBuyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="splash_btn buy_now"
+              >
+                <span>Buy Now</span>
+              </a>
             </div>
           </section>
           <section className="flex-2 product_detail__section">
