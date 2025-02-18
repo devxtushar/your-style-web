@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAPI } from "../../services/apiCalls";
+import { queryParams } from "../../utils/helperFn";
 
 export const fetchCompareData: any = createAsyncThunk(
   "fetchCompareData",
   async () => {
-    const response = await getAPI("/products");
-    console.log("entere");
+    const params = queryParams();
+    const response = await getAPI(`/products?${params}`);
+    console.log("enter in async redux", response);
     return response.data;
   }
 );

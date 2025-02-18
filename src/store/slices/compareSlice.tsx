@@ -1,13 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const compareData = localStorage.getItem("compare");
-
-// if (compareData) {
-//   console.log(JSON.parse(compareData).length);
-// } else {
-//   console.log("No data found in localStorage for 'compare'");
-// }
-
 const compareSlice = createSlice({
   name: "compare",
   initialState: {

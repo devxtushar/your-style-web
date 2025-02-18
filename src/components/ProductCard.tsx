@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCompareModal } from "../store/slices/compareSlice";
+
 function ProductCard(props: any) {
   const dispatch = useDispatch();
   const {

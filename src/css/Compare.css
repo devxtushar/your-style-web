@@ -10,7 +10,7 @@
 
 .compare_img__section {
   position: relative;
-  width: 100px;
+  width: 150px;
 }
 .compare_img {
   width: 100%;
@@ -26,8 +26,8 @@
 .remove_product {
   display: none;
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 40%;
+  left: 40%;
   cursor: pointer;
 }
 .compare_card {
@@ -40,4 +40,5 @@
   border-left: 1px solid rgb(223, 223, 223);
   border-right: 1px solid rgb(223, 223, 223);
   padding: 1em;
+  text-align: center;
 }
