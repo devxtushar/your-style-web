@@ -3,13 +3,13 @@
   bottom: 0;
   background-color: #fff;
   width: 100%;
-  padding: 3em 8em;
+  padding: 1em 8em;
 }
 .compare_img__section {
   position: relative;
-  padding: 1em;
-  background-color: #f5f7f9;
-  width: 200px;
+  /* padding: 1em; */
+  /* background-color: #f5f7f9; */
+  width: 150px;
 }
 .compare_img {
   width: 100%;
@@ -26,7 +26,7 @@
   display: none;
   position: absolute;
   top: 50%;
-  left: 23%;
+  left: 14%;
   cursor: pointer;
 }
 .compare_card {
@@ -38,5 +38,5 @@
   border-bottom: 1px solid rgb(223, 223, 223);
   border-left: 1px solid rgb(223, 223, 223);
   border-right: 1px solid rgb(223, 223, 223);
-  padding: 2em;
+  padding: 1em;
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { addToCompare } from "../utils/helperFn";
 function ProductCard(props: any) {
   const {
     title,
@@ -7,16 +9,21 @@ function ProductCard(props: any) {
     mrp,
     salePrice,
     percentageOff,
+    productBuyUrl,
+    _id,
   } = props.items;
+
   return (
     <div className="product_card">
-      <div>
-        <img
-          src={imageGallery[0].url}
-          alt="women black top"
-          className="product_img"
-        />
-      </div>
+      <Link to={`/product-detail/${_id}`}>
+        <div>
+          <img
+            src={imageGallery[0].url}
+            alt="women black top"
+            className="product_img"
+          />
+        </div>
+      </Link>
       <div
         className="flex flex-col gap-2"
         style={{ marginTop: 10, marginBottom: 15 }}
@@ -49,8 +56,20 @@ function ProductCard(props: any) {
           )}
         </div>
         <div className="btn_container" style={{ marginTop: 15 }}>
-          <span className="splash_btn compare_now">Compare</span>
-          <span className="splash_btn buy_now">Buy</span>
+          <span
+            className="splash_btn compare_now"
+            onClick={() => addToCompare(_id)}
+          >
+            Compare
+          </span>
+          <a
+            href={productBuyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="splash_btn buy_now"
+          >
+            <span>Buy</span>
+          </a>
         </div>
       </div>
     </div>

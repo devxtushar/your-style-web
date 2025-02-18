@@ -53,17 +53,14 @@ function CompareModal() {
       <div className="flex-1 flex flex-col gap-5">
         <div className="flex flex-row gap-10 justify-between">
           <button>Compare Now</button>
-          <AiOutlineCloseCircle size={40} className="cursor-pointer" />
+          <AiOutlineCloseCircle size={35} className="cursor-pointer" />
         </div>
         <h2 className="text-gray-500 font-light text-justify">
           Beige regular top,Solid, Sweetheart neck, long, Regular sleeves,
           Knitted cotton, The model (height 5'8) is wearing a size S Beige
           regular top,Solid, Sweetheart neck, long, Regular sleeves, Knitted
           cotton, The model (height 5'8) is wearing a size S Beige regular
-          top,Solid, Sweetheart neck, long, Regular sleeves, Knitted cotton, The
-          model (height 5'8) is wearing a size S Beige regular top,Solid,
-          Sweetheart neck, long, Regular sleeves, Knitted cotton, The model
-          (height 5'8) is wearing a size S.
+          top,Solid, Sweetheart neck, long, Regular sleeves, Knitted cotton.
         </h2>
       </div>
     </div>
