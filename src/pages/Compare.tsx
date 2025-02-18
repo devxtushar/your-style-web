@@ -1,5 +1,16 @@
+import { useEffect } from "react";
 import "../css/Compare.css";
+import { fetchCompareData } from "../store/slices/apiSlice";
+import { useDispatch, useSelector } from "react-redux";
 function Compare() {
+  const dispatch = useDispatch();
+  const state = useSelector((state: any) => state.apiSlice.value);
+  useEffect(() => {
+    if (state.length === 0) {
+      console.log(state, "called  fetchCompareData ");
+      dispatch(fetchCompareData());
+    }
+  }, []);
   return (
     <main className="top_container">
       <div className="main_Width global_container top_container compare_card">

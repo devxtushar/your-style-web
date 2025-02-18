@@ -3,10 +3,20 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { closeCompareModal } from "../store/slices/compareSlice";
+import { useEffect } from "react";
+import { fetchCompareData } from "../store/slices/apiSlice";
 
 function CompareModal() {
   const dispatch = useDispatch();
   const value = useSelector((state: any) => state.compareSlice.value);
+  const state = useSelector((state: any) => state.apiSlice.value);
+
+  useEffect(() => {
+    if (state.length === 0) {
+      console.log(state, "called  fetchCompareData ");
+      dispatch(fetchCompareData());
+    }
+  }, []);
 
   return (
     value && (
