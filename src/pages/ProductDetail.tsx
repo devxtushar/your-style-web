@@ -4,10 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { getAPI } from "../services/apiCalls";
 import Slider from "react-slick";
 import { AiFillStar } from "react-icons/ai";
-import { addToCompare } from "../utils/helperFn";
+import { useDispatch } from "react-redux";
+import { addToCompareModal } from "../store/slices/compareSlice";
 
 function ProductDetail() {
   const params = useParams();
+  const dispatch = useDispatch();
   const { data } = useQuery({
     queryKey: ["products"],
     queryFn: () => getAPI(`/products?_id=${params.id}`),
@@ -65,7 +67,7 @@ function ProductDetail() {
             <div className="btn_container">
               <span
                 className="splash_btn compare_now"
-                onClick={() => addToCompare(_id)}
+                onClick={() => dispatch(addToCompareModal(_id))}
               >
                 Compare Now
               </span>

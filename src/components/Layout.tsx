@@ -8,7 +8,7 @@ function Layout() {
     <div>
       <Nav />
       <Outlet />
-      {/* <CompareModal /> */}
+      <CompareModal />
       <Footer />
     </div>
   );

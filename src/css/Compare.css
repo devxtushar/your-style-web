@@ -1,15 +1,16 @@
 .compare_modal {
   position: fixed;
-  bottom: 0;
+  bottom: 0%;
   background-color: #fff;
   width: 100%;
-  padding: 1em 8em;
+  padding: 2em 8em;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: 0.4s ease-in-out;
 }
+
 .compare_img__section {
   position: relative;
-  /* padding: 1em; */
-  /* background-color: #f5f7f9; */
-  width: 150px;
+  width: 100px;
 }
 .compare_img {
   width: 100%;
@@ -25,8 +26,8 @@
 .remove_product {
   display: none;
   position: absolute;
-  top: 50%;
-  left: 14%;
+  top: 30%;
+  left: 30%;
   cursor: pointer;
 }
 .compare_card {

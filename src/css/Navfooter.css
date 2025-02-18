@@ -20,9 +20,12 @@ nav {
   position: absolute;
   z-index: 999;
   width: 100%;
+  max-width: 1920px;
   color: #fff;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .fix_maxWidth {

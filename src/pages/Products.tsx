@@ -11,7 +11,6 @@ function Products() {
     queryFn: () => getAPI(`/products?categoryType=${params.type}`),
     placeholderData: keepPreviousData,
   });
-  console.log(data, "data kya hai ");
   if (!data) return null;
   return (
     <main>
