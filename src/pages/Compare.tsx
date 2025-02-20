@@ -1,9 +1,11 @@
 import "../css/Compare.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineMinusCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function Compare() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const state = useSelector((state: any) => state.apiSlice.value);
 
   return (
@@ -15,7 +17,7 @@ function Compare() {
               <h1 className="font-semibold font-sans">Compare Result</h1>
             </div>
             <div>
-              <button>Back</button>
+              <button onClick={() => navigate(-1)}>Back</button>
             </div>
           </div>
           <div className="top_container flex flex-row justify-between">
@@ -102,7 +104,7 @@ function Compare() {
               <h1 className="font-semibold font-sans">Compare Result</h1>
             </div>
             <div>
-              <button>Back</button>
+              <button onClick={() => navigate(-1)}>Back</button>
             </div>
           </div>
           <div

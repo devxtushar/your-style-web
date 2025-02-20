@@ -26,7 +26,6 @@ const compareSlice = createSlice({
       state.value = false;
     },
     closeCompareModal(state) {
-      console.log("entere in close");
       state.value = false;
     },
   },

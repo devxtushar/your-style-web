@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import "../css/Navfooter.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 function Nav() {
   const location = useLocation();
+  const state = useSelector((state: any) => state.apiSlice.value);
   return (
     <nav>
       <div
@@ -40,7 +42,9 @@ function Nav() {
         </div>
         <div className="flex-1 flex flex-row justify-end">
           <Link to="/compare">
-            <button className="uppercase">Compare</button>
+            <button className="uppercase">
+              Compare{state && state.length === 0 ? null : ` (${state.length})`}
+            </button>
           </Link>
         </div>
       </div>
