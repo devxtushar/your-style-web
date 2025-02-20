@@ -13,11 +13,18 @@ const compareSlice = createSlice({
       let compareList: string[] = JSON.parse(
         localStorage.getItem("compare") || "[]"
       );
-      if (!compareList.includes(action.payload)) {
-        compareList.push(action.payload);
+
+      if (compareList.length < 4) {
+        console.log("entered in att to comparee", compareList.length);
+        if (!compareList.includes(action.payload)) {
+          compareList.push(action.payload);
+        }
+        localStorage.setItem("compare", JSON.stringify(compareList));
+        alert("saved");
+      } else {
+        alert("maximum 4 product can be compared at a time");
       }
-      localStorage.setItem("compare", JSON.stringify(compareList));
-      alert("saved");
+
       if (!state.value) {
         console.log(compareList, "com");
         if (compareList.length > 0) {
