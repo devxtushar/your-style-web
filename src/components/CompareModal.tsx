@@ -3,7 +3,6 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addToCompareModal,
   closeCompareModal,
   removeToCompareModal,
 } from "../store/slices/compareSlice";
@@ -59,11 +58,24 @@ function CompareModal() {
       )}
       <div className="flex-1 flex flex-col gap-5">
         <div className="flex flex-row gap-10 justify-between">
-          <Link to="/compare">
-            <button onClick={() => dispatch(closeCompareModal())}>
+          {state && state.length === 1 ? (
+            <button
+              className="uppercase"
+              style={{ backgroundColor: "gray" }}
+              onClick={() => alert("Add at least 2 products ")}
+            >
               Compare Now
+              {state && state.length === 0 ? null : ` (${state.length})`}
             </button>
-          </Link>
+          ) : (
+            <Link to="/compare">
+              <button className="uppercase">
+                Compare Now
+                {state && state.length === 0 ? null : ` (${state.length})`}
+              </button>
+            </Link>
+          )}
+
           <AiOutlineCloseCircle
             size={35}
             className="cursor-pointer"

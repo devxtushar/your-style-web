@@ -41,11 +41,23 @@ function Nav() {
           </Link>
         </div>
         <div className="flex-1 flex flex-row justify-end">
-          <Link to="/compare">
-            <button className="uppercase">
-              Compare{state && state.length === 0 ? null : ` (${state.length})`}
+          {state && state.length === 1 ? (
+            <button
+              className="uppercase"
+              style={{ backgroundColor: "gray" }}
+              onClick={() => alert("Add at least 2 products ")}
+            >
+              Compare
+              {state && state.length === 0 ? null : ` (${state.length})`}
             </button>
-          </Link>
+          ) : (
+            <Link to="/compare">
+              <button className="uppercase">
+                Compare
+                {state && state.length === 0 ? null : ` (${state.length})`}
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

@@ -15,6 +15,9 @@ function Compare() {
   const state = useSelector((state: any) => state.apiSlice.value);
 
   useEffect(() => {
+    if (state && state.length <= 1) {
+      navigate(-1);
+    }
     dispatch(closeCompareModal());
   }, []);
 
