@@ -15,7 +15,6 @@ const compareSlice = createSlice({
       );
 
       if (compareList.length < 4) {
-        console.log("entered in att to comparee", compareList.length);
         if (!compareList.includes(action.payload)) {
           compareList.push(action.payload);
         }
@@ -26,7 +25,6 @@ const compareSlice = createSlice({
       }
 
       if (!state.value) {
-        console.log(compareList, "com");
         if (compareList.length > 0) {
           state.value = true;
         }

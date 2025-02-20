@@ -6,7 +6,6 @@ export const fetchCompareData: any = createAsyncThunk(
   "fetchCompareData",
   async () => {
     const params = queryParams();
-    console.log("entyered ", params);
     if (params) {
       const response = await getAPI(`/products?${params}`);
       return response.data;
