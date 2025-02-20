@@ -2,11 +2,21 @@ import "../css/Compare.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  closeCompareModal,
+  removeToCompareModal,
+} from "../store/slices/compareSlice";
+import { fetchCompareData } from "../store/slices/apiSlice";
 
 function Compare() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const state = useSelector((state: any) => state.apiSlice.value);
+
+  useEffect(() => {
+    dispatch(closeCompareModal());
+  }, []);
 
   return (
     <main className="top_container">
@@ -30,6 +40,7 @@ function Compare() {
                 mrp,
                 salePrice,
                 percentageOff,
+                _id,
               } = items;
               return (
                 <div className="flex-1 flex flex-col gap-10" key={i}>
@@ -43,6 +54,10 @@ function Compare() {
                       <AiOutlineMinusCircle
                         size={30}
                         className="remove_product"
+                        onClick={() => {
+                          dispatch(removeToCompareModal(_id)),
+                            dispatch(fetchCompareData());
+                        }}
                       />
                     </div>
                   </div>

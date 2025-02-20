@@ -2,7 +2,11 @@ import "../css/Compare.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { closeCompareModal } from "../store/slices/compareSlice";
+import {
+  addToCompareModal,
+  closeCompareModal,
+  removeToCompareModal,
+} from "../store/slices/compareSlice";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchCompareData } from "../store/slices/apiSlice";
@@ -22,7 +26,7 @@ function CompareModal() {
       {state && state.length > 0 ? (
         <div className="flex-2 flex flex-row gap-15 justify-center">
           {state.map((items: any, i: number) => {
-            const { imageGallery, platformName, title } = items;
+            const { imageGallery, platformName, title, _id } = items;
             return (
               <div className="compare_img__section" key={i}>
                 <img
@@ -36,7 +40,14 @@ function CompareModal() {
                 <label className="t4 font-medium font-sans text-justify">
                   {title}
                 </label>
-                <AiOutlineMinusCircle size={30} className="remove_product" />
+                <AiOutlineMinusCircle
+                  size={30}
+                  className="remove_product"
+                  onClick={() => {
+                    dispatch(removeToCompareModal(_id)),
+                      dispatch(fetchCompareData());
+                  }}
+                />
               </div>
             );
           })}

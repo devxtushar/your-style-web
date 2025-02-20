@@ -6,8 +6,13 @@ export const fetchCompareData: any = createAsyncThunk(
   "fetchCompareData",
   async () => {
     const params = queryParams();
-    const response = await getAPI(`/products?${params}`);
-    return response.data;
+    console.log("entyered ", params);
+    if (params) {
+      const response = await getAPI(`/products?${params}`);
+      return response.data;
+    } else {
+      return [];
+    }
   }
 );
 

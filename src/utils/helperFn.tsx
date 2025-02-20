@@ -1,17 +1,25 @@
 export const getCompareList = () => {
   let stored = localStorage.getItem("compare");
 
-  if (stored) {
+  if (stored && JSON.parse(stored).length > 0) {
+    console.log("entered");
     return JSON.parse(stored);
   } else {
-    console.log("No data found in localStorage for 'compare'");
+    console.log("Nothing in compare list");
   }
 };
 
 export const queryParams = () => {
   const query = getCompareList();
-  const params = query
-    .map((id: string) => `_id=${encodeURIComponent(id)}`)
-    .join("&");
-  return params;
+  console.log("params inside 00", query);
+
+  if (query) {
+    const params = query
+      .map((id: string) => `_id=${encodeURIComponent(id)}`)
+      .join("&");
+    console.log("params inside");
+    return params;
+  } else {
+    return;
+  }
 };

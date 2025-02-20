@@ -12,7 +12,7 @@ function Layout() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
+  console.log(value, "value");
   return (
     <div>
       <Nav />
