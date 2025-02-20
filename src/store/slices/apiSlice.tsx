@@ -7,7 +7,6 @@ export const fetchCompareData: any = createAsyncThunk(
   async () => {
     const params = queryParams();
     const response = await getAPI(`/products?${params}`);
-    console.log("enter in async redux", response);
     return response.data;
   }
 );
@@ -19,7 +18,6 @@ const apiSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCompareData.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.value = action.payload;
     });
   },

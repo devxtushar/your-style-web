@@ -3,9 +3,9 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { closeCompareModal } from "../store/slices/compareSlice";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchCompareData } from "../store/slices/apiSlice";
-import { Link } from "react-router-dom";
 
 function CompareModal() {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function CompareModal() {
     if (state.length === 0) {
       dispatch(fetchCompareData());
     }
-  }, [state.length]);
+  }, []);
 
   return (
     <div className={"compare_modal flex flex-row gap-10 justify-between"}>

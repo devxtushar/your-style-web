@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCompareModal } from "../store/slices/compareSlice";
+import { fetchCompareData } from "../store/slices/apiSlice";
 
 function ProductCard(props: any) {
   const dispatch = useDispatch();
+
   const {
     title,
     platformName,
@@ -61,7 +63,9 @@ function ProductCard(props: any) {
         <div className="btn_container" style={{ marginTop: 15 }}>
           <span
             className="splash_btn compare_now"
-            onClick={() => dispatch(addToCompareModal(_id))}
+            onClick={() => {
+              dispatch(addToCompareModal(_id)), dispatch(fetchCompareData());
+            }}
           >
             Compare
           </span>

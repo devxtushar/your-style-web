@@ -1,17 +1,11 @@
-import { useEffect } from "react";
 import "../css/Compare.css";
-import { fetchCompareData } from "../store/slices/apiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 
 function Compare() {
   const dispatch = useDispatch();
   const state = useSelector((state: any) => state.apiSlice.value);
-  useEffect(() => {
-    if (state.length === 0) {
-      dispatch(fetchCompareData());
-    }
-  }, []);
+
   return (
     <main className="top_container">
       {state && state.length > 0 ? (
