@@ -3,34 +3,56 @@ import { createSlice } from "@reduxjs/toolkit";
 const compareSlice = createSlice({
   name: "compare",
   initialState: {
-    value: localStorage.getItem("compare") ? true : false,
+    value:
+      JSON.parse(localStorage.getItem("compare") || "[]").length > 0
+        ? true
+        : false,
   },
   reducers: {
     addToCompareModal(state, action) {
       let compareList: string[] = JSON.parse(
         localStorage.getItem("compare") || "[]"
       );
-      if (!compareList.includes(action.payload)) {
-        compareList.push(action.payload);
+
+      if (compareList.length < 4) {
+        if (!compareList.includes(action.payload)) {
+          compareList.push(action.payload);
+        }
+        localStorage.setItem("compare", JSON.stringify(compareList));
+        alert("saved");
+      } else {
+        alert("maximum 4 product can be compared at a time");
       }
-      localStorage.setItem("compare", JSON.stringify(compareList));
-      alert("save");
+
       if (!state.value) {
-        let stored = localStorage.getItem("compare");
-        if (stored) {
+        if (compareList.length > 0) {
           state.value = true;
         }
       }
     },
+    removeToCompareModal(state, action) {
+      let compareList: string[] = JSON.parse(
+        localStorage.getItem("compare") || "[]"
+      );
+      compareList = compareList.filter((id) => id !== action.payload);
+      localStorage.setItem("compare", JSON.stringify(compareList));
+      alert("removed");
+      if (compareList.length === 0) {
+        state.value = false;
+      }
+    },
     openCompareModal(state) {
-      state.value = false;
+      state.value = true;
     },
     closeCompareModal(state) {
-      console.log("entere in close");
       state.value = false;
     },
   },
 });
-export const { addToCompareModal, openCompareModal, closeCompareModal } =
-  compareSlice.actions;
+export const {
+  addToCompareModal,
+  removeToCompareModal,
+  openCompareModal,
+  closeCompareModal,
+} = compareSlice.actions;
 export default compareSlice.reducer;

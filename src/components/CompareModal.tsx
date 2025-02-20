@@ -2,10 +2,13 @@ import "../css/Compare.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { closeCompareModal } from "../store/slices/compareSlice";
+import {
+  closeCompareModal,
+  removeToCompareModal,
+} from "../store/slices/compareSlice";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchCompareData } from "../store/slices/apiSlice";
-import { Link } from "react-router-dom";
 
 function CompareModal() {
   const dispatch = useDispatch();
@@ -15,14 +18,14 @@ function CompareModal() {
     if (state.length === 0) {
       dispatch(fetchCompareData());
     }
-  }, [state.length]);
+  }, []);
 
   return (
     <div className={"compare_modal flex flex-row gap-10 justify-between"}>
       {state && state.length > 0 ? (
         <div className="flex-2 flex flex-row gap-15 justify-center">
           {state.map((items: any, i: number) => {
-            const { imageGallery, platformName, title } = items;
+            const { imageGallery, platformName, title, _id } = items;
             return (
               <div className="compare_img__section" key={i}>
                 <img
@@ -36,7 +39,14 @@ function CompareModal() {
                 <label className="t4 font-medium font-sans text-justify">
                   {title}
                 </label>
-                <AiOutlineMinusCircle size={30} className="remove_product" />
+                <AiOutlineMinusCircle
+                  size={30}
+                  className="remove_product"
+                  onClick={() => {
+                    dispatch(removeToCompareModal(_id)),
+                      dispatch(fetchCompareData());
+                  }}
+                />
               </div>
             );
           })}
@@ -48,11 +58,24 @@ function CompareModal() {
       )}
       <div className="flex-1 flex flex-col gap-5">
         <div className="flex flex-row gap-10 justify-between">
-          <Link to="/compare">
-            <button onClick={() => dispatch(closeCompareModal())}>
+          {state && state.length === 1 ? (
+            <button
+              className="uppercase"
+              style={{ backgroundColor: "gray" }}
+              onClick={() => alert("Add at least 2 products ")}
+            >
               Compare Now
+              {state && state.length === 0 ? null : ` (${state.length})`}
             </button>
-          </Link>
+          ) : (
+            <Link to="/compare">
+              <button className="uppercase">
+                Compare Now
+                {state && state.length === 0 ? null : ` (${state.length})`}
+              </button>
+            </Link>
+          )}
+
           <AiOutlineCloseCircle
             size={35}
             className="cursor-pointer"

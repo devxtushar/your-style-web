@@ -11,6 +11,8 @@ function Products() {
     queryFn: () => getAPI(`/products?categoryType=${params.type}`),
     placeholderData: keepPreviousData,
   });
+
+  function handleFilters(e: any) {}
   if (!data) return null;
   return (
     <main>
@@ -28,7 +30,11 @@ function Products() {
                         className="t3 flex flex-row justify-left items-center gap-5"
                         key={i}
                       >
-                        <input type="checkbox" className="checkbox" />
+                        {/* <input
+                          type="checkbox"
+                          className="checkbox"
+                          onChange={(e) => handleFilters(e)}
+                        /> */}
                         <label>
                           {items.name} {heading === "Discounts" && "% or more"}
                         </label>

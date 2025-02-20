@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addToCompareModal } from "../store/slices/compareSlice";
+import { fetchCompareData } from "../store/slices/apiSlice";
 
 function ProductDetail() {
   const params = useParams();
@@ -14,8 +15,7 @@ function ProductDetail() {
     queryKey: ["products"],
     queryFn: () => getAPI(`/products?_id=${params.id}`),
   });
-  console.log(params, "details params");
-  console.log(data, "details data");
+
   if (!data)
     return (
       <div
@@ -67,7 +67,10 @@ function ProductDetail() {
             <div className="btn_container">
               <span
                 className="splash_btn compare_now"
-                onClick={() => dispatch(addToCompareModal(_id))}
+                onClick={() => {
+                  dispatch(addToCompareModal(_id)),
+                    dispatch(fetchCompareData());
+                }}
               >
                 Compare Now
               </span>
