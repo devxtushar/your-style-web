@@ -3,7 +3,7 @@ import { footerJson } from "../utils/JSON";
 function Footer() {
   return (
     <footer>
-      <div className="global_container top_container flex flex-row justify-between footer_width">
+      <div className="global_container top_container flex flex-row justify-evenly footer_width">
         {footerJson.map((items, i) => {
           const { heading, options } = items;
           return (
