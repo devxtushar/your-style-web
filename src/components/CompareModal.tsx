@@ -21,9 +21,11 @@ function CompareModal() {
   }, []);
 
   return (
-    <div className={"compare_modal flex flex-row gap-10 justify-between"}>
+    <div
+      className={"compare_modal flex flex-row flex-wrap gap-10 justify-between"}
+    >
       {state && state.length > 0 ? (
-        <div className="flex-2 flex flex-row gap-15 justify-center">
+        <div className="flex-2 flex flex-row flex-wrap gap-15 justify-center">
           {state.map((items: any, i: number) => {
             const { imageGallery, platformName, title, _id } = items;
             return (

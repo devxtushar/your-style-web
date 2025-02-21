@@ -136,16 +136,16 @@ export const filterJSON = [
     heading: "Platforms",
     options: [
       {
-        name: "Amazon",
+        name: "amazon",
       },
       {
-        name: "Flipkart",
+        name: "flipkart",
       },
       {
-        name: "Meesho",
+        name: "meesho",
       },
       {
-        name: "Myntra",
+        name: "myntra",
       },
     ],
   },
