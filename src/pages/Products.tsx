@@ -1,46 +1,50 @@
 import "../css/Product.css";
 import { filterJSON } from "../utils/JSON";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getAPI } from "../services/apiCalls";
-import { useState } from "react";
-
-type AddedFilters = {
-  [key: string]: string | Number[];
-};
 
 function Products() {
   const params = useParams();
-  const [addFilters, setAddFilters] = useState<AddedFilters>({
-    Platform: [],
-    Discounts: [],
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const { data } = useQuery({
     queryKey: ["products", params.type],
     queryFn: () => getAPI(`/products?categoryType=${params.type}`),
     placeholderData: keepPreviousData,
   });
 
-  // function handleFilters(
-  //   e: React.ChangeEvent<HTMLInputElement>,
-  //   category: string
-  // ) {
-  //   const { checked, value } = e.target;
-  //   setAddFilters((prev) => {
-  //     const updatedCategory = checked
-  //       ? [...(prev[category] || [], value)]
-  //       : (prev[category] || []).filter((item: any) => item !== value);
-  //     return { ...prev, [category]: updatedCategory };
-  //   });
-  // }
+  console.log("remove");
+
+  function handleFilters(
+    e: React.ChangeEvent<HTMLInputElement>,
+    queryKey: string
+  ) {
+    const { checked, value } = e.target;
+    const currentValues = searchParams.getAll(queryKey);
+
+    let updatedValues;
+    if (checked) {
+      updatedValues = [...currentValues, value];
+    } else {
+      updatedValues = currentValues.filter((item) => item !== value);
+    }
+
+    const newSearchParams = new URLSearchParams(searchParams); // Copy existing params
+    newSearchParams.delete(queryKey); // Remove old values
+    updatedValues.forEach((val) => newSearchParams.append(queryKey, val)); // Add updated values
+
+    setSearchParams(newSearchParams);
+  }
+
   if (!data) return null;
   return (
     <main>
       <div className="main_Width global_container top_container flex flex-row gap-10">
-        {/* <section className="filters flex flex-col gap-10">
+        <section className="filters flex flex-col gap-10">
           {filterJSON.map((items, i) => {
-            const { heading, options } = items;
+            const { heading, queryKey, options } = items;
             return (
               <div key={i} className="flex flex-col gap-5">
                 <h2>{heading}</h2>
@@ -55,10 +59,14 @@ function Products() {
                           type="checkbox"
                           className="checkbox"
                           value={items.name}
-                          // checked={addFilters[heading].includes(items.name)}
-                          onChange={(e) => handleFilters(e, heading)}
+                          checked={searchParams
+                            .getAll(queryKey)
+                            .includes(items.name)}
+                          onChange={(e) => {
+                            handleFilters(e, queryKey);
+                          }}
                         />
-                        <label>
+                        <label className="capitalize">
                           {items.name} {heading === "Discounts" && "% or more"}
                         </label>
                       </li>
@@ -68,7 +76,7 @@ function Products() {
               </div>
             );
           })}
-        </section> */}
+        </section>
         <section className="flex-1 products">
           <div className="flex flex-row flex-wrap gap-5 justify-evenly">
             {data.data.length > 0 ? (

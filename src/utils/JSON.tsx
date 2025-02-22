@@ -134,6 +134,7 @@ export const productJSON = [
 export const filterJSON = [
   {
     heading: "Platforms",
+    queryKey: "platformName",
     options: [
       {
         name: "amazon",
@@ -151,6 +152,8 @@ export const filterJSON = [
   },
   {
     heading: "Discounts",
+    queryKey: "percentageOff",
+
     options: [
       {
         name: "30",
