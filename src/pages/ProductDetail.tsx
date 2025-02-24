@@ -52,8 +52,8 @@ function ProductDetail() {
   return (
     <main>
       {data.data.length > 0 ? (
-        <div className="main_Width global_container top_container flex flex-row gap-10">
-          <section className="flex-1  images_section">
+        <div className="main_Width global_container top_container flex flex-row flex-wrap gap-10">
+          <section className="flex-1  images_section flex flex-col justify-between gap-10">
             <Slider {...settings}>
               {imageGallery.map(
                 (items: { url: string; altText: string }, i: number) => {
@@ -72,7 +72,7 @@ function ProductDetail() {
                     dispatch(fetchCompareData());
                 }}
               >
-                Compare Now
+                Compare
               </span>
               <a
                 href={productBuyUrl}
@@ -156,7 +156,7 @@ function ProductDetail() {
                     ) => {
                       const { heading, description, image } = items;
                       return (
-                        <div key={i} className="flex flex-row gap-10">
+                        <div key={i} className="flex flex-row flex-wrap gap-10">
                           <div>
                             <h2 className="font-semibold">{heading}</h2>
                             <div>

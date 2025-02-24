@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Nav from "./Nav";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import CompareModal from "./CompareModal";
 import { useSelector } from "react-redux";
 
@@ -17,7 +17,7 @@ function Layout() {
       <Nav />
       <Outlet />
       {value && <CompareModal />}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

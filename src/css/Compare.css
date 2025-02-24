@@ -42,3 +42,9 @@
   padding: 1em;
   text-align: center;
 }
+
+@media screen and (min-width: 0px) and (max-width: 512px) {
+  .compare_list__section {
+    flex-wrap: wrap;
+  }
+}

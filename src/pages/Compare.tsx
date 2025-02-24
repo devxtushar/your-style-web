@@ -33,7 +33,7 @@ function Compare() {
               <button onClick={() => navigate(-1)}>Back</button>
             </div>
           </div>
-          <div className="top_container flex flex-row justify-between">
+          <div className="top_container flex flex-row justify-between compare_list__section gap-10">
             {state.map((items: any, i: number) => {
               const {
                 title,

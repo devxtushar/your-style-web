@@ -1,3 +1,4 @@
+import "../css/Home.css";
 function CategoryCard() {
   return (
     <div className="relative category_card">
@@ -9,8 +10,8 @@ function CategoryCard() {
         />
       </div>
       <div className="inside_img flex flex-col gap-5">
-        <h2>Upto 20% Off On Tank Tops</h2>
-        <h3>
+        <h2 className="inside_img__h2">Upto 20% Off On Tank Tops</h2>
+        <h3 className="inside_img__h3">
           Elevate your wardrobe with fashionable deals, ensuring you shine
           without breaking the bank.
         </h3>

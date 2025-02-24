@@ -52,7 +52,7 @@
   background-color: #fff;
   width: 100%;
   max-width: 450px;
-  min-width: 250px;
+  min-width: 300px;
 }
 .product_detail__section {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -60,7 +60,7 @@
   padding: 2em;
   background-color: #fff;
   width: 100%;
-  min-width: 250px;
+  min-width: 300px;
   height: 65.5em;
   overflow: auto;
 }
@@ -72,7 +72,6 @@
 .btn_container {
   display: flex;
   gap: 0px;
-  margin-top: 2em;
 }
 
 .splash_btn {
@@ -115,4 +114,14 @@
 
 .product_detail__section::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 651px) {
+  .images_section {
+    max-width: 100%;
+  }
+  .btn_container {
+    width: 100%;
+    justify-content: center;
+  }
 }
